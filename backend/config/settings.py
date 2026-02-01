@@ -52,7 +52,7 @@ CORS_ALLOWED_ORIGINS = os.getenv(
 CORS_ALLOW_CREDENTIALS = True
 
 CSRF_TRUSTED_ORIGINS = os.getenv(
-    "CORS_ALLOWED_ORIGINS", ""
+    "CSRF_TRUSTED_ORIGINS", ""
 ).split(",")
 
 
