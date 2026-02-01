@@ -9,14 +9,20 @@ function Newproject() {
     const navigate = useNavigate()
 
     function createPost(project) {
-        api.post("projects/", project)
+        const projectData = {
+        ...project,
+        services: project.services ?? [],
+        total_cost: project.total_cost ?? 0,
+    };
+    
+        api.post("projects/", projectData)
             .then(() => {
                 navigate("/projects", {
                     state: { message: "Projeto criado com sucesso!" },
                 });
             })
             .catch((err) => {
-                console.error(err);
+                console.error(err.response?.data || err.message);
                 alert("Erro ao criar projeto");
             });
     }

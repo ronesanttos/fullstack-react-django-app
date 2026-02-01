@@ -5,7 +5,7 @@ import { BsTrash } from 'react-icons/bs'
 function ServiceCard({ id, name, cost, description, handleRemove }) {
     const remove = (event) => {
         event.preventDefault()
-        handleRemove(id, cost)
+        handleRemove(id,cost)
 
     }
     return (
