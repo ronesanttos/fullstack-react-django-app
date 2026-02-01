@@ -14,34 +14,35 @@ class ProjectSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Projects
-        fields = ('id', 'name', 'budget', 'total_cost', 'services',)
+        fields = "__all__"
         
     def update(self, instance, validated_data):
-        services_data = validated_data.pop('services', [])
+        services_data = validated_data.pop('services', None)
 
         # Atualiza campos do projeto
         for attr, value in validated_data.items():
             setattr(instance, attr, value)
 
         instance.save()
-
+        
+        # ⚠️ Só mexe em serviços se eles vierem
+        if services_data is None:
+            return instance
+        
         # Atualiza serviços
-        existing_ids = [s.id for s in instance.services.all()]
-        sent_ids = [s.get('id') for s in services_data if s.get('id')]
-
-        # Remove serviços deletados
-        for service in instance.services.exclude(id__in=sent_ids):
-            service.delete()
+        existing_services = [s.id for s in instance.services.all()]
+        sent_ids = []
 
         total_cost = 0
-
+        
         for service_data in services_data:
             service_id = service_data.get('id')
 
-            if service_id and service_id in existing_ids:
-                service = Services.objects.get(id=service_id)
+            if service_id and service_id in existing_services:
+                service = existing_services[service_id]
                 service.name = service_data['name']
                 service.cost = service_data['cost']
+                service.description = service_data.get('description', '')
                 service.save()
             else:
                 service = Services.objects.create(
@@ -49,9 +50,12 @@ class ProjectSerializer(serializers.ModelSerializer):
                     **service_data
                 )
 
+            sent_ids.append(service.id)
             total_cost += service.cost
 
-        # Atualiza total_cost com segurança
+        # Remove apenas os que não vieram
+        instance.services.exclude(id__in=sent_ids).delete()
+
         if total_cost > instance.budget:
             raise serializers.ValidationError(
                 'O custo total dos serviços ultrapassa o orçamento do projeto.'
@@ -59,6 +63,5 @@ class ProjectSerializer(serializers.ModelSerializer):
 
         instance.total_cost = total_cost
         instance.save()
-        
+
         return instance
-        
