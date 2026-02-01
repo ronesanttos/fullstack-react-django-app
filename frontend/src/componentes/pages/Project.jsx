@@ -12,7 +12,7 @@ import api from '../../api/api.js';
 
 function Project() {
     const [projects, setProjects] = useState([])
-     const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
     const [projectMessage, setProjectMessage] = useState('')
 
     const location = useLocation()
@@ -49,21 +49,23 @@ function Project() {
             {projectMessage && <Message type="success" msg={projectMessage} />}
 
             <Container customClass="start">
-                {projects.length > 0 && 
-                projects.map((projects) => (
-                    <ProjectCards 
-                    id={projects.id} 
-                    name={projects.name} 
-                    budget={projects.budget} 
-                    services={projects?.services?.name} 
-                    key={projects.id}
-                    handleRemove={removeProject} />
-                ))}
 
-                {!loading && <Loading />}
-                {loading && projects.length === 0 && (
+                {loading && <Loading />}
+                {!loading && projects.length === 0 && (
                     <p className={style.info}>Não há projetos cadastrados!</p>
                 )}
+
+                {!loading && projects.length > 0 &&
+                    projects.map((projects) => (
+                        <ProjectCards
+                            id={projects.id}
+                            name={projects.name}
+                            budget={projects.budget}
+                            services={projects?.services?.name}
+                            key={projects.id}
+                            handleRemove={removeProject} />
+                    ))}
+
             </Container>
         </div>)
 }
