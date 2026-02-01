@@ -28,21 +28,24 @@ class ProjectSerializer(serializers.ModelSerializer):
         # ⚠️ Só mexe em serviços se eles vierem
         if services_data is None:
             return instance
-        
+
         # Atualiza serviços
-        existing_services = [s.id for s in instance.services.all()]
-        sent_ids = []
+        existing_ids = [s.id for s in instance.services.all()]
+        sent_ids = [s.get('id') for s in services_data if s.get('id')]
+
+        # Remove serviços deletados
+        for service in instance.services.exclude(id__in=sent_ids):
+            service.delete()
 
         total_cost = 0
-        
+
         for service_data in services_data:
             service_id = service_data.get('id')
 
-            if service_id and service_id in existing_services:
-                service = existing_services[service_id]
+            if service_id and service_id in existing_ids:
+                service = Services.objects.get(id=service_id)
                 service.name = service_data['name']
                 service.cost = service_data['cost']
-                service.description = service_data.get('description', '')
                 service.save()
             else:
                 service = Services.objects.create(
@@ -50,12 +53,9 @@ class ProjectSerializer(serializers.ModelSerializer):
                     **service_data
                 )
 
-            sent_ids.append(service.id)
             total_cost += service.cost
 
-        # Remove apenas os que não vieram
-        instance.services.exclude(id__in=sent_ids).delete()
-
+        # Atualiza total_cost com segurança
         if total_cost > instance.budget:
             raise serializers.ValidationError(
                 'O custo total dos serviços ultrapassa o orçamento do projeto.'
@@ -63,5 +63,6 @@ class ProjectSerializer(serializers.ModelSerializer):
 
         instance.total_cost = total_cost
         instance.save()
-
+        
         return instance
+        
