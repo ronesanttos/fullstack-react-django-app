@@ -1,4 +1,4 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import Home from './componentes/pages/Home'
 import Project from "./componentes/pages/Project";
@@ -13,20 +13,20 @@ import Footer from "./componentes/layout/Footer";
 
 function App() {
   return (
-    <Router>
+    <>
       <Navbar />
       <Container customClass='min-height'>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route element={<Project />} path="/projects" />
-          <Route element={<Company />} path="/company" />
-          <Route element={<Contact />} path="/contact" />
-          <Route element={<Newproject />} path="/newproject" />
-          <Route element={<EditProject />} path="/editproject/:id" />
+          <Route path="/projects" element={<Project />} />
+          <Route path="/company" element={<Company />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/newproject" element={<Newproject />} />
+          <Route path="/editproject/:id" element={<EditProject />} />
         </Routes>
       </Container>
       <Footer />
-    </Router>
+    </>
   )
 }
 
