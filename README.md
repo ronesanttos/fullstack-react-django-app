@@ -81,36 +81,35 @@ git clone https://github.com/ronesanttos/fullstack-react-django-app.git
 cd fullstack-react-django-app/backend
 
 ## crie o ambiente virtual
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+- python -m venv venv
+- source venv/bin/activate  # Windows: venv\Scripts\activate
 
-## instale as dependências
-pip install -r requirements.txt
+-  instale as dependências
+- pip install -r requirements.txt
 
-## configure as variáveis de ambiente
-cp .env.example .env
+- configure as variáveis de ambiente
+- cp .env.example .env
 
-## rode as migrações
-python manage.py migrate
+ - rode as migrações
+- python manage.py migrate
 
-## inicie o servidor
-python manage.py runserver
+ - inicie o servidor
+- python manage.py runserver
 
 ## 🔹 Frontend (React)
-cd frontend
+- cd frontend
+- instale as dependências
+- npm install
 
-## instale as dependências
-npm install
+-  configure a API
+- .env
+- VITE_API_URL=http://localhost:8000/api
 
-## configure a API
-## .env
-VITE_API_URL=http://localhost:8000/api
+- rode o projeto
+- npm run dev
 
-## rode o projeto
-npm run dev
-
-## 🔐 Variáveis de Ambiente
-### Backend
+###🔐 Variáveis de Ambiente
+## Backend
 - SECRET_KEY=your_secret_key
 - DEBUG=False
 - ALLOWED_HOSTS=backend-django-630j.onrender.com
