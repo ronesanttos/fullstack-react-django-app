@@ -1,50 +1,81 @@
 .project_details {
-    padding: 2em;
+  padding: 2rem 1rem;
 }
 
 .project_details h1,
 .project_details h2,
 .project_details p {
-    margin-bottom: 0.5em;
+  margin-bottom: 0.5rem;
 }
 
 .project_details h1 {
-    background-color: #222;
-    color: orange;
-    padding: 0.4em;
+  background-color: #222;
+  color: orange;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+}
+
+.project_details h2 {
+  margin-top: 1.5rem;
 }
 
 .project_details span {
-    font-weight: bold;
+  font-weight: bold;
 }
 
+/* Blocos de formulário */
 .service_form_container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 
-    padding-bottom: 1.2em;
-    margin-bottom: 1.2em;
-    border-bottom: 1px solid #7a7a7a;
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid #7a7a7a;
 }
 
+/* Botões */
 .btn {
-    background-color: #222;
-    color: white;
+  background-color: #222;
+  color: white;
 
-    padding: 0.5em 1em;
-    text-decoration: none;
-    border: none;
-    transition: 0.5s;
-    cursor: pointer;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 
-    max-height: 40px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .btn:hover {
-    color: orange;
+  color: orange;
 }
 
+/* Conteúdo interno */
 .project_info {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+  .service_form_container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn {
     width: 100%;
+    text-align: center;
+  }
+
+  .project_details h1 {
+    font-size: 1.4rem;
+  }
+
+  .project_details h2 {
+    font-size: 1.2rem;
+  }
 }

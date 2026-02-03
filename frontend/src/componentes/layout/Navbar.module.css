@@ -1,27 +1,69 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-
-    background-color: black;
-    padding: 1em;
+  width: 100%;
+  background-color: #000;
+  padding: 1rem 0;
 }
 
+/* Container interno */
+.navbar :global(.nav) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Menu */
 .list {
-    display: flex;
-    list-style: none;
-    align-items: center;
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 1rem;
 }
 
-.item {
-    margin-right: 1em;
-   
-}
-
+/* Itens */
 .item a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
 }
 
 .item a:hover {
-    color: orange;
+  color: orange;
+}
+
+/* Botão mobile */
+.menu_button {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+  .menu_button {
+    display: block;
+  }
+
+  .list {
+    position: absolute;
+    top: 64px;
+    right: 0;
+    width: 100%;
+    background-color: #000;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 0;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .list.active {
+    opacity: 1;
+    pointer-events: all;
+  }
 }

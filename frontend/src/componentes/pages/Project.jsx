@@ -58,11 +58,11 @@ function Project() {
                 {!loading && projects.length > 0 &&
                     projects.map((projects) => (
                         <ProjectCards
+                            key={projects.id}
                             id={projects.id}
                             name={projects.name}
                             budget={projects.budget}
                             services={projects?.services?.name}
-                            key={projects.id}
                             handleRemove={removeProject} />
                     ))}
 
