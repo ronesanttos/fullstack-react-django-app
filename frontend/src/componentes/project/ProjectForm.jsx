@@ -3,8 +3,9 @@ import style from './ProjectForm.module.css';
 
 import Input from '../form/Input';
 import SubmitButton from '../form/SubmitButton';
+import LinkButton from '../layout/LinkButton';
 
-function ProjectForm({ handleSubmit, btnText, projetctData }) {
+function ProjectForm({ handleSubmit, btnText,projetctData }) {
 
     const [project, setProject] = useState(
         projetctData || {
@@ -40,12 +41,13 @@ function ProjectForm({ handleSubmit, btnText, projetctData }) {
             type="number" 
             text='Orçamento do projeto' 
             name='budget' 
-            placeholder="Insira o orçamento total"
+            placeholder="Insira o valor total do orçamento "
             handleOnChange={handleChange} 
             value={project.budget || ''} />
 
             <SubmitButton text={btnText} />
-
+            <LinkButton to={"/projects"} text={"Fechar"}/>
+            
         </form>
     )
 
