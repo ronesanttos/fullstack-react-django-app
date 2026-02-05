@@ -8,7 +8,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0rem;
+  margin: 1rem 0rem;
 }
 
 /* Desktop grid controlado pelo Container */
