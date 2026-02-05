@@ -3,11 +3,10 @@
   max-width: 1200px;
   margin: 0 auto;
 
-  padding: 0 1rem;
-
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  row-gap: 3.5rem;
 }
 
 /* Altura mínima para páginas */

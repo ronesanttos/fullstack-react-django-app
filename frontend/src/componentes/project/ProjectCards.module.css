@@ -1,5 +1,4 @@
 .project_card {
-  width: 100%;
   padding: 1.2rem;
   border: 1px solid #7a7a7a;
   border-radius: 8px;
@@ -8,7 +7,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: 1rem auto;
+  margin: 0 auto;
 }
 
 /* Desktop grid controlado pelo Container */
