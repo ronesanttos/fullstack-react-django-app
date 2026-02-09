@@ -17,9 +17,16 @@ function ProjectCards({ id, name, budget, services, handleRemove }) {
                 <span>Orçamento:</span> R${budget}
             </p>
 
-            <p className={style.services_text}>
-                <span className={`${style[services?.toLowerCase()]}`}></span> {services}
-            </p>
+            {services && services.length > 0 ? (
+                services.map(service => (
+                    <p className={style.services_text} key={service.id}>
+                        <span className={`${style[service?.name.toLowerCase()]}`}></span> {service.name}
+                    </p>
+                ))
+            ) : (
+                <p>Sem serviços</p>
+            )}
+
             <div className={style.project_card_actions}>
                 <Link to={`/editproject/${id}`}>
                     <BsPencil /> Editar
