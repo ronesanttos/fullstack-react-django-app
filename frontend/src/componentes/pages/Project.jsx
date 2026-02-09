@@ -18,7 +18,6 @@ function Project() {
     const location = useLocation()
     let message = location.state?.message || '';
 
-
     useEffect(() => {
         api.get('projects/')
             .then(response => {
@@ -28,6 +27,7 @@ function Project() {
             .finally(() => setLoading(false));
     }, []);
 
+    console.log(projects)
     function removeProject(id) {
         api.delete(`projects/${id}/`)
             .then(() => {
@@ -62,7 +62,7 @@ function Project() {
                             id={projects.id}
                             name={projects.name}
                             budget={projects.budget}
-                            services={projects?.services?.name}
+                            services={projects.services.name}
                             handleRemove={removeProject} />
                     ))}
 
