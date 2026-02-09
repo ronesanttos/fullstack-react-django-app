@@ -1,5 +1,4 @@
 .project_card {
-  flex: 1 1 280px;
   max-width: 320px;
   
   padding: 1rem;
@@ -11,7 +10,7 @@
 /* Desktop grid controlado pelo Container */
 @media (min-width: 1024px) {
   .project_card {
-    width: calc(25% - 1rem);
+    width: calc(60% - 1rem);
   }
 }
 
