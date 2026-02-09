@@ -14,7 +14,7 @@
 
 /* Alinhamento inicial */
 .start {
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 /* Layout em coluna */

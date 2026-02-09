@@ -1,10 +1,10 @@
 .project_card {
+  flex: 1 1 280px;
+  max-width: 320px;
+  
   padding: 1rem;
   border: 1px solid #7a7a7a;
   border-radius: 8px;
-
-  display: flex;
-  flex-direction: column;
   margin: 1rem;
 }
 
