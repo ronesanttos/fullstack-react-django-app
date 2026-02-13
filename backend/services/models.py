@@ -3,6 +3,8 @@ from projects.models import Projects
 
 class Services(models.Model):
     project = models.ForeignKey(Projects,related_name='services', on_delete=models.CASCADE)
+    
+    
     name = models.CharField(max_length=100)
     cost = models.DecimalField(max_digits=10, decimal_places=2)
     description = models.CharField(max_length=1024,blank=True, null=True)

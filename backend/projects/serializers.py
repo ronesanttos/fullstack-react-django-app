@@ -1,7 +1,7 @@
 from rest_framework import serializers #type:ignore
 from .models import Projects
 from services.models import Services
-from services.serializers import ServiceSerializer
+from django.db import transaction
 
 
 class ServiceInlineSerializer(serializers.ModelSerializer):
@@ -11,11 +11,16 @@ class ServiceInlineSerializer(serializers.ModelSerializer):
         
 class ProjectSerializer(serializers.ModelSerializer):
     services = ServiceInlineSerializer(many=True,read_only=True)
+    category_name = serializers.CharField(
+        source='category.name',
+        read_only=True
+    )
     
     class Meta:
         model = Projects
         fields = "__all__"
         
+    @transaction.atomic
     def update(self, instance, validated_data):
         services_data = validated_data.pop('services', None)
 
@@ -43,9 +48,10 @@ class ProjectSerializer(serializers.ModelSerializer):
             service_id = service_data.get('id')
 
             if service_id and service_id in existing_ids:
-                service = Services.objects.get(id=service_id)
+                service = instance.services.objects.get(id=service_id)
                 service.name = service_data['name']
                 service.cost = service_data['cost']
+                service.description = service_data.get('description')
                 service.save()
             else:
                 service = Services.objects.create(
