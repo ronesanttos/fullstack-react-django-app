@@ -39,7 +39,8 @@ function EditProject() {
 
         const payload = {
             name: updatedProject.name,
-            budget: updatedProject.budget
+            budget: updatedProject.budget,
+            category: updatedProject.category
         }
 
         api.patch(`projects/${id}/`, payload)
