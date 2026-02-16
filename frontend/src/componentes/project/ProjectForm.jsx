@@ -21,12 +21,15 @@ function ProjectForm({ handleSubmit, btnText, projetctData }) {
         }
     );
 
+    // obs aqui
     useEffect(() => {
-        api.get('/categories/')
+        api.get('/projects/')
             .then(response => {
-                setCategories(response.data);
+                setCategories(response.data.category);
+                console.log(response.data)
             })
     },[]);
+
 
     const submit = (event) => {
         event.preventDefault()

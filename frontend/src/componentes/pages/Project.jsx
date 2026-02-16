@@ -27,7 +27,6 @@ function Project() {
             .finally(() => setLoading(false));
     }, []);
 
-    console.log("services", projects[0]?.services[0]?.name)
     function removeProject(id) {
         api.delete(`projects/${id}/`)
             .then(() => {
@@ -62,6 +61,7 @@ function Project() {
                             id={projects.id}
                             name={projects.name}
                             budget={projects.budget}
+                            category={projects.category}
                             services={projects.services}
                             handleRemove={removeProject} />
                     ))}
