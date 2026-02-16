@@ -25,7 +25,7 @@ function ProjectForm({ handleSubmit, btnText, projetctData }) {
     useEffect(() => {
         api.get('/projects/')
             .then(response => {
-                setCategories(response.data.category);
+                setCategories(response.data);
                 console.log(response.data)
             })
     },[]);
