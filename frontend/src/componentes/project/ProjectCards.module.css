@@ -26,12 +26,12 @@
     font-weight: bold;
 }
 
-.category_text {
+.categories_text {
     display: flex;
     align-items: center;
 }
 
-.category_text span {
+.categories_text span {
     display: block;
     width: 12px;
     height: 12px;
