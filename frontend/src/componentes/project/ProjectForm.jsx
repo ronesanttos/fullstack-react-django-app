@@ -21,8 +21,6 @@ function ProjectForm({ handleSubmit, btnText, projetctData }) {
         }
     );
 
-    print(project)
-
     // obs aqui
     useEffect(() => {
         api.get('/projects/')
