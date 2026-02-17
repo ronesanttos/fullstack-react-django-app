@@ -1,12 +1,12 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter #type:ignore 
-from projects.views import ProjectViewSet, CategorySerializer
+from projects.views import ProjectViewSet, CategoryViewSet
 from services.views import ServiceViewSet
 
 router = DefaultRouter()
 router.register(r'projects', ProjectViewSet)
-router.register(r'categories', CategorySerializer)
+router.register(r'categories', CategoryViewSet)
 router.register(r'services', ServiceViewSet)
 
 urlpatterns = [
