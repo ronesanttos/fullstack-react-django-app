@@ -1,6 +1,7 @@
 import style from './Select.module.css'
 
 function Select({ text, name, options, handleOnChange, value }) {
+    console.log('select =>>', name,options)
     return (
         <div className={style.form_control}>
             <label htmlFor={name}>{text}:</label>

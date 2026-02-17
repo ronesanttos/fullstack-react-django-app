@@ -15,7 +15,7 @@ function ProjectForm({ handleSubmit, btnText, projetctData }) {
         projetctData || {
             name: '',
             budget: '',
-            category: '',
+            categories: '',
             services: [],
             total_cost: 0,
         }
@@ -29,6 +29,7 @@ function ProjectForm({ handleSubmit, btnText, projetctData }) {
             })
     },[]);
 
+    console.log('category ProjectForm =====>',categories)
 
     const submit = (event) => {
         event.preventDefault()
@@ -58,7 +59,7 @@ function ProjectForm({ handleSubmit, btnText, projetctData }) {
                 handleOnChange={handleChange}
                 value={project.budget || ''} />
 
-            <Select name="category" text='Selecione a categoria' options={categories}  handleOnChange={handleChange} value={project.category || ''}/>
+            <Select name="category" text='Selecione a categoria' options={categories}  handleOnChange={handleChange} value={project.categories || ''}/>
 
             <SubmitButton text={btnText} />
             <LinkButton to={"/projects"} text={"Fechar"} />
