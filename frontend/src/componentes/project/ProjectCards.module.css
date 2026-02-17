@@ -1,66 +1,60 @@
 .project_card {
-  max-width: 280px;
-  
-  padding: 1rem;
-  border: 1px solid #7a7a7a;
-  border-radius: 8px;
-}
+    width: 24%;
 
-/* Desktop grid controlado pelo Container */
-@media (min-width: 1024px) {
-  .project_card {
-    width: calc(60% - 1rem);
-  }
-}
+    padding: 1em;
+    margin: 0.5%;
 
-/* Tablet */
-@media (min-width: 600px) and (max-width: 1023px) {
-  .project_card {
-    width: calc(50% - 1rem);
-  }
+    border: 1px solid #7a7a7a;
+    border-radius: 5px;
 }
 
 .project_card h4 {
-  background-color: #222;
-  color: orange;
-  padding: 0.4rem 0.6rem;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  border-radius: 4px;
+    background-color: #222;
+    color: orange;
+
+    padding: 0.4em;
+    margin-bottom: 1.3em;
+    font-size: 1.3em;
 }
 
 .project_card p {
-  color: #7b7b7b;
-  margin-bottom: 0.8rem;
-  font-size: 0.95rem;
+    color: #7a7a7a;
+    margin-bottom: 1em;
 }
 
 .project_card p span {
-  font-weight: bold;
+    font-weight: bold;
 }
 
-.categories_text {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
+.category_text {
+    display: flex;
+    align-items: center;
 }
 
-.categories_text span {
-  width: 12px;
-  height: 12px;
-  margin-right: 6px;
-  background-color: #ccc;
-  border-radius: 50%;
+.category_text span {
+    display: block;
+    width: 12px;
+    height: 12px;
+
+    margin-right: 5px;
+
+    background-color: #CCC;
+    border-radius: 50%;
 }
 
-/* Cores por tipo */
 .categories_text .infra {
-  background-color: chocolate;
+    background-color: chocolate;
+
 }
 
 .categories_text .desenvolvimento {
-  background-color: aqua;
+    background-color: aqua;
 }
+
+.categories_text .projetar {
+    background-color: yellow;
+}
+
 
 .categories_text .front-end {
   background-color: cornflowerblue;
@@ -74,45 +68,41 @@
   background-color: chartreuse;
 }
 
-/* Ações */
+
+
 .project_card_actions {
-  display: flex;
-  gap: 0.8rem;
-  margin-top: auto;
+    display: flex;
+    align-items: center;
+    margin-top: 1.2em;
 }
 
 .project_card_actions a,
 .project_card_actions button {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  background-color: white;
-  color: #222;
+    background-color: white;
+    color: #222;
 
-  padding: 0.6rem;
-  font-size: 0.9rem;
-  border: 1px solid #222;
-  border-radius: 4px;
+    padding: 0.6em 1em;
+    margin-right: 1em;
 
-  cursor: pointer;
-  transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: .9em;
+    border: none;
+    border: 1px solid #222;
+
+    cursor: pointer;
+    transition: 0.5s;
 }
 
 .project_card_actions svg {
-  margin-right: 0.4rem;
+    margin-right: .5em;
 }
 
 .project_card_actions a:hover,
 .project_card_actions button:hover {
-  background-color: #222;
-  color: orange;
-}
-
-/* 📱 Mobile */
-@media (max-width: 480px) {
-  .project_card_actions {
-    flex-direction: column;
-  }
+    background-color: #222;
+    color: orange;
 }
