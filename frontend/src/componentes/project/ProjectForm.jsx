@@ -29,7 +29,6 @@ function ProjectForm({ handleSubmit, btnText, projetctData }) {
             })
     },[]);
 
-    console.log('category ProjectForm =====>',categories)
 
     const submit = (event) => {
         event.preventDefault()

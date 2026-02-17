@@ -20,7 +20,7 @@ function ProjectCards({ id, name, budget, categories, services, handleRemove }) 
             {categories && categories.length > 0 ? (
                 categories.map(category => (
                     <p  key={category.id}>
-                        <span></span> {category.name}
+                        <span></span> {category}
                     </p>
                 ))
             ) : (
