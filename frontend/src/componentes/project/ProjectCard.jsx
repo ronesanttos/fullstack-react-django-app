@@ -17,15 +17,9 @@ function ProjectCards({ id, name, budget, category, services, handleRemove }) {
                 <span>Orçamento:</span> R${budget}
             </p>
 
-            {category && category.length > 0 ? (
-                category.map(category => (
-                    <p className={style.services_text} key={category.id}>
-                        <span className={`${style[category?.name.toLowerCase()]}`}></span> {category.name}
-                    </p>
-                ))
-            ) : (
-                <p>Sem serviços</p>
-            )}
+            <p>
+                <span>Categoria:</span> {category}
+            </p>
 
             {services && services.length > 0 ? (
                 services.map(service => (
