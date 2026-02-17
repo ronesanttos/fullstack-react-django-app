@@ -136,7 +136,7 @@ function EditProject() {
                 </div>
 
                 <h2>Serviços</h2>
-                <Container className='start'>
+                <Container className='services_containet'>
                     {services.length > 0 ? services.map(service => (
                         <ServiceCard
                             id={service.id}
@@ -145,7 +145,7 @@ function EditProject() {
                             description={service.description}
                             cost={service.cost}
                             handleRemove={removeService} />
-                    )) : <p>Não há serviços cadastrados.</p>}
+                    )) : <p className={style.no_services}>Não há serviços cadastrados.</p>}
                     
                 </Container>
             </Container>

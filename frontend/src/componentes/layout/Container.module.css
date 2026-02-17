@@ -19,6 +19,14 @@
   justify-content: center;
 }
 
+/* Lista de serviços */
+.services_container {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 /* Layout em coluna */
 .column {
   flex-direction: column;
