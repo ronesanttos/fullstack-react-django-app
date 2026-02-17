@@ -19,7 +19,7 @@ function ProjectCards({ id, name, budget, category_name, handleRemove }) {
 
             {
                 <p className={style.categories_text} key={id}>
-                        <span className={`${style[category_name.toLowerCase()]}`}></span> {category_name}
+                        <span className={`${style[category_name?.toLowerCase()]}`}></span> {category_name}
                     </p> || "Sem Categoria"
             }
 
