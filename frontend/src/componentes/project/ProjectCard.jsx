@@ -4,7 +4,7 @@ import style from './ProjectCards.module.css';
 import { BsPencil, BsTrash } from 'react-icons/bs';
 
 
-function ProjectCards({ id, name, budget, category_name, services, handleRemove }) {
+function ProjectCards({ id, name, budget, category_name, handleRemove }) {
 
     const remove = (event) => {
         event.preventDefault()
@@ -17,17 +17,11 @@ function ProjectCards({ id, name, budget, category_name, services, handleRemove 
                 <span>Orçamento:</span> R${budget}
             </p>
 
-            <h2>categoria ${category_name}</h2>
-
-            {services && services.length > 0 ? (
-                services.map(service => (
-                    <p className={style.services_text} key={service.id}>
-                        <span className={`${style[service?.name.toLowerCase()]}`}></span> {service.name}
-                    </p>
-                ))
-            ) : (
-                <p>Sem serviços</p>
-            )}
+            {
+                <p className={style.categories_text} key={id}>
+                        <span className={`${style[category_name.toLowerCase()]}`}></span> {category_name}
+                    </p> || "Sem Categoria"
+            }
 
             <div className={style.project_card_actions}>
                 <Link to={`/editproject/${id}`}>

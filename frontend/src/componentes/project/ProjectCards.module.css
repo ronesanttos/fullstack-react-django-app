@@ -40,13 +40,13 @@
   font-weight: bold;
 }
 
-.services_text {
+.categories_text {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
 }
 
-.services_text span {
+.categories_text span {
   width: 12px;
   height: 12px;
   margin-right: 6px;
@@ -55,19 +55,23 @@
 }
 
 /* Cores por tipo */
-.services_text .infra {
+.categories_text .infra {
   background-color: chocolate;
 }
 
-.services_text .desenvolvimento {
+.categories_text .desenvolvimento {
   background-color: aqua;
 }
 
-.services_text .projetar {
+.categories_text .front-end {
+  background-color: cornflowerblue;
+}
+
+.categories_text .back-end {
   background-color: yellow;
 }
 
-.services_text .planejamento {
+.categories_text .planejamento {
   background-color: chartreuse;
 }
 
