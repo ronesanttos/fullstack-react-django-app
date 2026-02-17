@@ -1,11 +1,12 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter #type:ignore 
-from projects.views import ProjectViewSet
+from projects.views import ProjectViewSet, CategorySerializer
 from services.views import ServiceViewSet
 
 router = DefaultRouter()
 router.register(r'projects', ProjectViewSet)
+router.register(r'categories', CategorySerializer)
 router.register(r'services', ServiceViewSet)
 
 urlpatterns = [
@@ -21,6 +22,7 @@ urlpatterns = [
         GET	/api/projects/{id}/	Detalhar projeto
         PUT	/api/projects/{id}/	Atualizar
         DELETE /api/projects/{id}/	Deletar
+        GET	/api/categories/ Listar categorias
         GET	/api/services/	Listar serviços
         POST /api/services/	Criar serviço
         PUT	/api/services/{id}/	Atualizar

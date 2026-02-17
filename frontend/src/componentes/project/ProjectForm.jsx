@@ -23,10 +23,9 @@ function ProjectForm({ handleSubmit, btnText, projetctData }) {
 
     // obs aqui
     useEffect(() => {
-        api.get('/projects/')
+        api.get('/categories/')
             .then(response => {
                 setCategories(response.data);
-                console.log(response.data)
             })
     },[]);
 

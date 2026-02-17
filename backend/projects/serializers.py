@@ -1,5 +1,5 @@
 from rest_framework import serializers #type:ignore
-from .models import Projects
+from .models import Projects, Category
 from services.models import Services
 from django.db import transaction
 
@@ -8,6 +8,11 @@ class ServiceInlineSerializer(serializers.ModelSerializer):
     class Meta:
         model = Services
         fields = ('id', 'name', 'cost', 'description')
+        
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = '__all__'
         
 class ProjectSerializer(serializers.ModelSerializer):
     services = ServiceInlineSerializer(many=True,read_only=True)
