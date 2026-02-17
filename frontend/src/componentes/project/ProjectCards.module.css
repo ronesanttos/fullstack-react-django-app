@@ -1,10 +1,9 @@
 .project_card {
-  max-width: 320px;
+  max-width: 280px;
   
   padding: 1rem;
   border: 1px solid #7a7a7a;
   border-radius: 8px;
-  margin: 1rem;
 }
 
 /* Desktop grid controlado pelo Container */
