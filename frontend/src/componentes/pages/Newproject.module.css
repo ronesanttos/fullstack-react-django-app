@@ -1,17 +1,25 @@
 .newproject_container {
-    width: 450px;
-    margin: 0 auto;
-    padding: 3em;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+
+  background-color: #fff;
+  border-radius: 10px;
 }
 
 .newproject_container h1 {
-    margin-bottom: 0.5em;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
 }
 
 .newproject_container p {
-    color: #7b7b7b;
-}
+  color: #7b7b7b;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
 
+}
 
 /* 📱 Mobile */
 @media (max-width: 600px) {
