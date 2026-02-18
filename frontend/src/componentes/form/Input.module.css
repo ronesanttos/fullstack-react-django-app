@@ -5,10 +5,9 @@
 }
 
 .form_control label {
-  background-color: #7b7b7b33;
   color: gray;
   margin-bottom: 0.6em;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .form_control input {
