@@ -5,12 +5,15 @@
 }
 
 .form_control label {
+    background-color: #7b7b7b33;
+    color: gray;
     margin-bottom: 0.6em;
     font-weight: bold;
 }
 
 .form_control select {
     background-color: #7b7b7b33;
+    color: gray;
     padding: 0.7em;
     border: none;
 }
