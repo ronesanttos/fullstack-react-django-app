@@ -9,7 +9,7 @@ import api from '../../api/api'
 
 function ProjectForm({ handleSubmit, btnText, projetctData }) {
 
-    const [categories, setCategories] = useState([]);
+    const [category, setCategories] = useState([]);
 
     const [project, setProject] = useState(
         projetctData || {
@@ -37,7 +37,8 @@ function ProjectForm({ handleSubmit, btnText, projetctData }) {
     }
 
     function handleChange(event) {
-        setProject({ ...project, [event.target.name]: event.target.value })
+        const {name, value} = event.target
+        setProject({ ...project, [name]: name === "category" ? Number(value) : value })
     }
 
     return (
@@ -59,7 +60,7 @@ function ProjectForm({ handleSubmit, btnText, projetctData }) {
                 handleOnChange={handleChange}
                 value={project.budget || ''} />
 
-            <Select name="category" text='Selecione a categoria' options={categories}  handleOnChange={handleChange} value={project.category || ''}/>
+            <Select name="category" text='Selecione a categoria' options={category}  handleOnChange={handleChange} value={project.category || ''}/>
 
             <SubmitButton text={btnText} />
             <LinkButton to={"/projects"} text={"Fechar"} />
