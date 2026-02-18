@@ -15,13 +15,12 @@ function ProjectForm({ handleSubmit, btnText, projetctData }) {
         projetctData || {
             name: '',
             budget: '',
-            categories: '',
+            category: '',
             services: [],
             total_cost: 0,
         }
     );
-    console.log('Cate',categories)
-    console.log('Proj', project)
+    
 
     // obs aqui
     useEffect(() => {
@@ -60,7 +59,7 @@ function ProjectForm({ handleSubmit, btnText, projetctData }) {
                 handleOnChange={handleChange}
                 value={project.budget || ''} />
 
-            <Select name="category" text='Selecione a categoria' options={categories}  handleOnChange={handleChange} value={project.categories || ''}/>
+            <Select name="category" text='Selecione a categoria' options={categories}  handleOnChange={handleChange} value={project.category || ''}/>
 
             <SubmitButton text={btnText} />
             <LinkButton to={"/projects"} text={"Fechar"} />
