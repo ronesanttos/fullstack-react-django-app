@@ -1,9 +1,9 @@
 import {Link} from 'react-router-dom'
 import style from './LinkButton.module.css'
 
-function LinkButton({to, text}) {
+function LinkButton({to, text, variant=''}) {
     return (
-        <Link className={style.btn} to={to}> {text} </Link>
+        <Link className={`${style.btn} ${style[variant]}`} to={to}> {text} </Link>
     )
 }
 

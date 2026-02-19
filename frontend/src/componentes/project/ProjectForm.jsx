@@ -63,7 +63,7 @@ function ProjectForm({ handleSubmit, btnText, projetctData }) {
             <Select name="category" text='Selecione a categoria' options={category}  handleOnChange={handleChange} value={project.category || ''}/>
 
             <SubmitButton text={btnText} />
-            <LinkButton to={"/projects"} text={"Fechar"} />
+            <LinkButton to={"/"} text={"Fechar"} />
 
         </form>
     )

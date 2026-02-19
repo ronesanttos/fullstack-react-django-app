@@ -93,8 +93,9 @@ function EditProject() {
     if (!project) return <Loading />
     return (
         <div className={style.project_details}>
+            <LinkButton to='/' text='Voltar' variant='exit' />
             <Container customClass="column">
-
+                <LinkButton to='/' text='Voltar 2' variant='exit' />
                 {message && <Message type={type} msg={message} />}
 
                 <div className={style.service_form_container}>
@@ -111,10 +112,10 @@ function EditProject() {
                         </div>
                     ) : (
                         <div className={style.project_info}>
-                            <ProjectForm 
-                            handleSubmit={editPost} 
-                            btnText='Salvar edição'
-                             projetctData={project} />
+                            <ProjectForm
+                                handleSubmit={editPost}
+                                btnText='Salvar edição'
+                                projetctData={project} />
                         </div>
                     )}
                 </div>
@@ -129,9 +130,9 @@ function EditProject() {
                     <div className={style.project_info}>
                         {showServiceF && (
                             <ServiceForm
-                            handleSubmit={createService} 
-                            btnText='Adicionar Serviço'
-                            projectData={project} />)}
+                                handleSubmit={createService}
+                                btnText='Adicionar Serviço'
+                                projectData={project} />)}
                     </div>
                 </div>
 
@@ -146,7 +147,7 @@ function EditProject() {
                             cost={service.cost}
                             handleRemove={removeService} />
                     )) : <p className={style.no_services}>Não há serviços cadastrados.</p>}
-                    
+
                 </Container>
             </Container>
         </div>

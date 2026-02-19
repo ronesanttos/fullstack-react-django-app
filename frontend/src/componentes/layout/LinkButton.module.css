@@ -4,7 +4,6 @@
     border: 1px solid coral ;
 
     padding: 0.5em 1.2em;
-    margin: 1rem 0rem;
     
     border-radius: 10px;
     cursor: pointer;
@@ -14,4 +13,12 @@
 
 .btn:hover {
     color: orange;
+}
+
+.exit {
+  background-color: red;
+}
+
+.exit:hover {
+  color: orange;
 }

@@ -40,8 +40,10 @@ function Project() {
     return (
         <div className={style.project_container}>
             <div className={style.title_container}>
-                <h1>Meus projetos</h1>
+                <LinkButton to='/' text='Voltar' variant='exit'/>
                 <LinkButton to='/newproject' text='Criar Projeto' />
+                <h1>Meus projetos</h1>
+
             </div>
 
             {message && <Message type="success" msg={message} />}
