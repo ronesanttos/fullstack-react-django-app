@@ -15,29 +15,3 @@
 .btn:hover {
     color: orange;
 }
-
-/* 📱 Mobile */
-@media (max-width: 600px) {
-  .btn {
-    width: 80%;           /* botão ocupa largura total */
-    padding: 0.9em;
-    font-size: 0.95rem;
-    border-radius: 8px;
-  }
-}
-
-/* 📲 Tablet */
-@media (min-width: 601px) and (max-width: 900px) {
-  .btn {
-    padding: 0.8em 1.5em;
-    font-size: 1rem;
-  }
-}
-
-/* 💻 Desktop grande */
-@media (min-width: 1200px) {
-  .btn {
-    padding: 0.9em 1.8em;
-    font-size: 1.05rem;
-  }
-}
