@@ -39,19 +39,37 @@
   color: white;
   cursor: pointer;
 }
+/* 📱 Tablet */
+@media (max-width: 1024px) {
+  .list {
+    justify-content: space-between;
+    padding: 0 1.5rem;
+  }
+}
 
 /* 📱 Mobile */
 @media (max-width: 768px) {
+  .navbar {
+    position: relative;
+  }
+
+  .navbar :global(.nav) {
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
   .menu_button {
     display: block;
   }
 
   .list {
     position: absolute;
-    top: 64px;
+    top: 100%;
     right: 0;
     width: 100%;
     background-color: #000;
+
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
@@ -59,11 +77,25 @@
 
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
   .list.active {
     opacity: 1;
     pointer-events: all;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Mobile pequeno */
+@media (max-width: 480px) {
+  .list {
+    gap: 1.2rem;
+    padding: 1.5rem 0;
+  }
+
+  .item a {
+    font-size: 0.95rem;
   }
 }
