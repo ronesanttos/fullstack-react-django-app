@@ -18,3 +18,43 @@
 }
 
 
+/* 📱 Mobile pequeno */
+@media (max-width: 480px) {
+  .form_control {
+    margin-bottom: 0.8em;
+    width: 90%;
+  }
+
+  .form_control label {
+    font-size: 0.85rem;
+  }
+
+  .form_control select {
+    padding: 0.6em;
+    font-size: 0.9rem;
+  }
+}
+
+/* 📲 Tablet */
+@media (min-width: 481px) and (max-width: 768px) {
+    .form_control {
+    margin-bottom: 0.8em;
+  }
+
+  .form_control select {
+    padding: 0.75em;
+    font-size: 0.95rem;
+  }
+}
+
+/* 💻 Desktop */
+@media (min-width: 1024px) {
+  .form_control {
+    max-width: 500px;
+  }
+
+  .form_control select {
+    padding: 0.9em;
+    font-size: 1rem;
+  }
+}
