@@ -46,6 +46,7 @@
 /* 📱 Mobile pequeno */
 @media (max-width: 480px) {
   .project_container {
+    width: 80%;
     padding: 1em 0.75rem;
   }
 
