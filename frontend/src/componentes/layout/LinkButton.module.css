@@ -19,7 +19,7 @@
 /* 📱 Mobile */
 @media (max-width: 600px) {
   .btn {
-    width: 100%;           /* botão ocupa largura total */
+    width: 80%;           /* botão ocupa largura total */
     padding: 0.9em;
     font-size: 0.95rem;
     border-radius: 8px;
