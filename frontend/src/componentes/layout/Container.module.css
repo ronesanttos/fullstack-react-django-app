@@ -32,7 +32,7 @@
 @media (max-width: 1024px) {
   .container {
     width: 100%;
-    padding: 0 1rem;
+    padding: 0rem 1rem;
   }
 
   .services_container {
@@ -45,7 +45,7 @@
   .container {
     width: 100%;
     flex-direction: column;
-    padding: 0 0.75rem;
+    padding: 0rem 0.75rem;
   }
 
   .services_container {
