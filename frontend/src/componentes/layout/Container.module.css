@@ -43,7 +43,7 @@
 /* 📱 Mobile */
 @media (max-width: 768px) {
   .container {
-    width: 100%;
+    width: 80vw;
     flex-direction: column;
     padding: 0rem 0.75rem;
   }
@@ -57,6 +57,7 @@
 /* 📱 Mobile pequeno */
 @media (max-width: 480px) {
   .container {
+    width: 90vw;
     padding: 0 0.5rem;
   }
 

@@ -50,7 +50,9 @@
 /* 📱 Mobile */
 @media (max-width: 768px) {
   .navbar {
+    width: 100%;
     position: relative;
+    padding: 1.5rem;
   }
 
   .navbar :global(.nav) {

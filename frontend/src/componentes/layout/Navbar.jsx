@@ -8,7 +8,6 @@ function Navbar() {
 
   return (
     <nav className={style.navbar}>
-      <Container customClass="nav">
         <button
           className={style.menu_button}
           onClick={() => setOpen(!open)}
@@ -30,7 +29,6 @@ function Navbar() {
             <Link to='/contact' onClick={() => setOpen(false)}>Contatos</Link>
           </li>
         </ul>
-      </Container>
     </nav>
   )
 }
