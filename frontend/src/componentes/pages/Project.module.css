@@ -14,14 +14,47 @@
     font-weight: 600;
     padding: 5px;
 }
+
+/* 📱 Tablet */
+@media (max-width: 1024px) {
+  .project_container {
+    padding: 1.5em;
+  }
+
+  .title_container {
+    gap: 1rem;
+  }
+}
+
 /* 📱 Mobile */
 @media (max-width: 768px) {
+  .project_container {
+    padding: 1.2em 1rem;
+  }
+
   .title_container {
     flex-direction: column;
     align-items: flex-start;
+    gap: 1rem;
   }
 
   .title_container h1 {
     font-size: 1.6rem;
+  }
+}
+
+/* 📱 Mobile pequeno */
+@media (max-width: 480px) {
+  .project_container {
+    padding: 1em 0.75rem;
+  }
+
+  .title_container h1 {
+    font-size: 1.4rem;
+  }
+
+  .info {
+    font-size: 0.9rem;
+    padding: 4px;
   }
 }
