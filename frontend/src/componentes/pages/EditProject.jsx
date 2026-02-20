@@ -94,7 +94,7 @@ function EditProject() {
     if (!project) return <Loading />
     return (
         <div className={style.project_details}>
-            <LinkButton to='/' text='Voltar' variant='exit' />
+            <LinkButton text='Voltar' back variant='exit' />
             <Container customClass="column">
                 {message && <Message type={type} msg={message} />}
 
