@@ -96,7 +96,6 @@ function EditProject() {
         <div className={style.project_details}>
             <LinkButton to='/' text='Voltar' variant='exit' />
             <Container customClass="column">
-                <LinkButton to='/' text='Voltar 2' variant='exit' />
                 {message && <Message type={type} msg={message} />}
 
                 <div className={style.service_form_container}>
